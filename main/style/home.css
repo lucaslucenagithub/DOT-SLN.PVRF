@@ -1,0 +1,13 @@
+.home {
+  height: 100vh;
+  background-color: #ffffff;
+  margin: 0 0 200px 0;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
