@@ -1,17 +1,25 @@
-import 'dart:io';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'dart:ui' as ui;
+import 'dart:html';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
   LicenseRegistry.addLicense(() async* {
     final license = await rootBundle.loadString('google_fonts/OFL.txt');
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);
   });
+
+  ui.platformViewRegistry.registerViewFactory(
+      'test-view-type',
+      (int viewId) => IFrameElement()
+        ..width = '640'
+        ..height = '360'
+        ..src =
+            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14635.100183842442!2d-46.59440242267025!3d-23.504610777994305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5f4fafac8399%3A0xccbeef5f59ab61ef!2sVila%20Maria%20Alta%2C%20S%C3%A3o%20Paulo%20-%20State%20of%20S%C3%A3o%20Paulo!5e0!3m2!1sen!2sbr!4v1615425716177!5m2!1sen!2sbr"
+        ..style.border = 'none');
 
   runApp(MyApp());
 }
@@ -360,17 +368,103 @@ class _MyHomePageState extends State<MyHomePage> {
                           )),
                       Expanded(
                           child: Container(
+                              padding: EdgeInsets.only(
+                                  top: 50, left: 150, right: 150, bottom: 20),
                               margin: EdgeInsets.only(top: 20),
-                              child: WebView(
-                                initialUrl: Uri.dataFromString(
-                                  '<html><body><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14635.100183842442!2d-46.59440242267025!3d-23.504610777994305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5f4fafac8399%3A0xccbeef5f59ab61ef!2sVila%20Maria%20Alta%2C%20S%C3%A3o%20Paulo%20-%20State%20of%20S%C3%A3o%20Paulo!5e0!3m2!1sen!2sbr!4v1615425716177!5m2!1sen!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></body></html>',
-                                  mimeType: 'text/html',
-                                ).toString(),
-                                javascriptMode: JavascriptMode.unrestricted,
-                              ))),
-                      Row(),
-                      Container(),
-                      Row()
+                              child:
+                                  HtmlElementView(viewType: 'test-view-type'))),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Container(
+                                    padding: EdgeInsets.only(
+                                        top: 50,
+                                        bottom: 50,
+                                        right: 100,
+                                        left: 150),
+                                    child: Column(children: [
+                                      Container(
+                                          alignment: Alignment.topLeft,
+                                          margin: EdgeInsets.only(bottom: 20),
+                                          child: Text(
+                                            'Inquéritos',
+                                            style: TextStyle(
+                                                fontSize: 26,
+                                                color:
+                                                    Colors.lightBlue.shade900),
+                                          )),
+                                      Container(
+                                        child: Text(
+                                            'Para qualquer consulta, dúvida ou recomendação, ligue: 123-456-7890'),
+                                      )
+                                    ]))
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Container(
+                                    child: Column(children: [
+                                  Container(
+                                    margin: EdgeInsets.only(bottom: 20),
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      'Escritório Central',
+                                      style: TextStyle(
+                                          fontSize: 26,
+                                          color: Colors.lightBlue.shade900),
+                                    ),
+                                  ),
+                                  Container(
+                                    child: Text('Vila Maria Alta - 999999-99'),
+                                  )
+                                ]))
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      Container(
+                        child: Text(
+                          'Solicite um orçamento: 123-456-7890',
+                          style: TextStyle(
+                              fontSize: 32, color: Colors.lightBlue.shade900),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(bottom: 50, top: 50),
+                            child: Row(children: [
+                              Container(
+                                  margin: EdgeInsets.only(right: 25),
+                                  child: Icon(
+                                    FontAwesomeIcons.linkedin,
+                                    size: 28.0,
+                                    color: Colors.blue,
+                                  )),
+                              Container(
+                                  margin: EdgeInsets.only(right: 25),
+                                  child: Icon(
+                                    FontAwesomeIcons.envelope,
+                                    size: 28.0,
+                                    color: Colors.red,
+                                  )),
+                              Container(
+                                  margin: EdgeInsets.only(right: 25),
+                                  child: Icon(
+                                    FontAwesomeIcons.instagram,
+                                    size: 28.0,
+                                    color: Colors.black,
+                                  ))
+                            ]),
+                          )
+                        ],
+                      )
                     ],
                   ),
                 ),
