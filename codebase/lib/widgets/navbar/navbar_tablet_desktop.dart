@@ -1,23 +1,19 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class NavBar extends StatefulWidget {
-  NavBar({Key key}) : super(key: key);
+class NavBarTabletDesktop extends StatefulWidget {
+  NavBarTabletDesktop({Key key}) : super(key: key);
 
   @override
-  _NavBarState createState() => _NavBarState();
+  _NavBarTabletDesktopState createState() => _NavBarTabletDesktopState();
 }
 
-class _NavBarState extends State<NavBar> {
+class _NavBarTabletDesktopState extends State<NavBarTabletDesktop> {
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
+    return AppBar(
       leadingWidth: 70,
       toolbarHeight: 70,
-      pinned: true,
-      snap: true,
-      floating: true,
-      expandedHeight: 0.0,
-      flexibleSpace: FlexibleSpaceBar(),
       backgroundColor: Colors.amber[800],
       leading: Image(
         image: AssetImage('../assets/logo/logoPVRF.png'),

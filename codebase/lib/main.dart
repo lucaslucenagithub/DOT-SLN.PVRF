@@ -3,7 +3,7 @@ import 'package:codebase/views/contact.dart';
 import 'package:codebase/views/footer.dart';
 import 'package:codebase/views/home.dart';
 import 'package:codebase/views/services.dart';
-import 'package:codebase/widgets/navbar/index.dart';
+import 'package:codebase/widgets/navbar/navBar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -41,18 +41,19 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          NavBar(),
-          SliverList(
-            delegate: SliverChildListDelegate(([
+      body: Column(
+        children: <Widget>[
+          Expanded(
+              child: ListView(
+            children: [
+              NavBar(),
               Home(),
               Services(),
               About(),
               Contact(),
               Footer(),
-            ])),
-          ),
+            ],
+          ))
         ],
       ),
       floatingActionButton: FloatingActionButton(

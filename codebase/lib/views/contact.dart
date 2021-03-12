@@ -9,9 +9,9 @@ class Contact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 800.0,
+      height: 1000.0,
       color: Colors.white,
-      alignment: Alignment.center,
+      // alignment: Alignment.center,
       child: Center(
         child: Column(
           children: [
@@ -33,7 +33,9 @@ class Contact extends StatelessWidget {
                     ),
                   ],
                 )),
-            EmbededMap(),
+            Expanded(
+              child: EmbededMap(),
+            ),
             Row(
               children: [
                 Expanded(
