@@ -7,52 +7,50 @@ class Services extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizingInformation) {
-      Axis orientation = sizingInformation.deviceScreenType ==
-                  DeviceScreenType.mobile ||
-              sizingInformation.deviceScreenType == DeviceScreenType.tablet ||
-              sizingInformation.screenSize <= Size(1190, 1009)
+      Axis orientation = sizingInformation.screenSize <= Size(1048, 1009)
           ? Axis.vertical
           : Axis.horizontal;
 
       double paddingLeftRight =
-          sizingInformation.deviceScreenType == DeviceScreenType.tablet
-              ? 120
-              : sizingInformation.deviceScreenType == DeviceScreenType.mobile
-                  ? 2
-                  : 50;
+          sizingInformation.screenSize <= Size(1048, 1009) &&
+                  sizingInformation.screenSize >= Size(630, 1009)
+              ? 150
+              : sizingInformation.screenSize <= Size(630, 1009)
+                  ? 50
+                  : 0;
 
       return Expanded(
         child: Container(
             alignment: Alignment.center,
             padding: EdgeInsets.only(
-                left: paddingLeftRight,
-                right: paddingLeftRight,
-                top: 10,
-                bottom: 50),
+                left: paddingLeftRight, right: paddingLeftRight, bottom: 100),
             color: Colors.white,
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 40),
-                  child: Text(
-                    'Serviços',
-                    style: TextStyle(
-                        fontSize: 48, color: Colors.lightBlue.shade900),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 5, bottom: 40),
-                  height: 5,
-                  width: 100,
-                  color: Colors.amber[800],
-                ),
+                    margin: EdgeInsets.only(top: 5, bottom: 40),
+                    child: Column(children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 40),
+                        child: Text(
+                          'Serviços',
+                          style: TextStyle(
+                              fontSize: 48, color: Colors.lightBlue.shade900),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 5, bottom: 40),
+                        height: 5,
+                        width: 100,
+                        color: Colors.amber[800],
+                      )
+                    ])),
                 Flex(
                     direction: orientation,
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Card(
-                        margin:
-                            EdgeInsets.only(right: 40, left: 40, bottom: 40),
+                        margin: EdgeInsets.only(bottom: 40),
                         child: Column(
                           children: [
                             Container(
@@ -91,8 +89,7 @@ class Services extends StatelessWidget {
                         color: Colors.grey[50],
                       ),
                       Card(
-                        margin:
-                            EdgeInsets.only(right: 40, left: 40, bottom: 40),
+                        margin: EdgeInsets.only(bottom: 40),
                         child: Column(
                           children: [
                             Container(
@@ -131,8 +128,7 @@ class Services extends StatelessWidget {
                         color: Colors.grey[50],
                       ),
                       Card(
-                        margin:
-                            EdgeInsets.only(right: 40, left: 40, bottom: 40),
+                        margin: EdgeInsets.only(bottom: 40),
                         child: Column(
                           children: [
                             Container(
