@@ -12,10 +12,10 @@ class Services extends StatelessWidget {
           : Axis.horizontal;
 
       double paddingLeftRight =
-          sizingInformation.screenSize <= Size(1048, 1009) &&
-                  sizingInformation.screenSize >= Size(630, 1009)
+          sizingInformation.screenSize <= Size(1048, 9999) &&
+                  sizingInformation.screenSize >= Size(630, 0)
               ? 150
-              : sizingInformation.screenSize <= Size(630, 1009)
+              : sizingInformation.screenSize <= Size(630, 9999)
                   ? 50
                   : 0;
 

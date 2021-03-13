@@ -10,22 +10,24 @@ class NavBarMobile extends StatefulWidget {
 class _NavBarMobileState extends State<NavBarMobile> {
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      leadingWidth: 70,
-      toolbarHeight: 70,
-      backgroundColor: Colors.amber[800],
-      leading: Image(
-        image: AssetImage('../assets/logo/logoPVRF.png'),
-      ),
-      actions: <Widget>[
-        Container(
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            child: IconButton(
-              icon: Icon(Icons.menu),
-              onPressed: () {},
-            )),
-      ],
-    );
+    return CustomScrollView(slivers: <Widget>[
+      SliverAppBar(
+        leadingWidth: 70,
+        toolbarHeight: 70,
+        backgroundColor: Colors.amber[800],
+        leading: Image(
+          image: AssetImage('../assets/logo/logoPVRF.png'),
+        ),
+        actions: <Widget>[
+          Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.only(right: 10),
+              child: IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () {},
+              )),
+        ],
+      )
+    ]);
   }
 }

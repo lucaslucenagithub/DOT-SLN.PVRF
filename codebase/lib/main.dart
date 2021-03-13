@@ -41,19 +41,50 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          Expanded(
-              child: ListView(
-            children: [
-              NavBar(),
-              Home(),
-              Services(),
-              About(),
-              Contact(),
-              Footer(),
+      body: CustomScrollView(
+        slivers: [
+          // NavBar(),
+          SliverAppBar(
+            leadingWidth: 70,
+            toolbarHeight: 70,
+            pinned: true,
+            floating: true,
+            snap: true,
+            backgroundColor: Colors.amber[800],
+            leading: Image(
+              image: AssetImage('../assets/logo/logoPVRF.png'),
+            ),
+            actions: <Widget>[
+              Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(left: 0, right: 50),
+                child: Text('HOME'),
+              ),
+              Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(left: 0, right: 50),
+                child: Text('SERVIÇOS'),
+              ),
+              Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(left: 0, right: 50),
+                child: Text('SOBRE'),
+              ),
+              Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(left: 0, right: 50),
+                child: Text('CONTATO'),
+              ),
             ],
-          ))
+          ),
+          SliverList(
+              delegate: SliverChildListDelegate([
+            Home(),
+            Services(),
+            About(),
+            Contact(),
+            Footer(),
+          ])),
         ],
       ),
       floatingActionButton: FloatingActionButton(

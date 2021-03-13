@@ -11,7 +11,6 @@ class Contact extends StatelessWidget {
     return Container(
       height: 1000.0,
       color: Colors.white,
-      // alignment: Alignment.center,
       child: Center(
         child: Column(
           children: [

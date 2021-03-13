@@ -14,9 +14,13 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout(
-      mobile: NavBarMobile(),
-      tablet: NavBarTabletDesktop(),
+    return CustomScrollView(
+      slivers: [
+        ScreenTypeLayout(
+          mobile: NavBarMobile(),
+          tablet: NavBarTabletDesktop(),
+        )
+      ],
     );
   }
 }
