@@ -3,7 +3,8 @@ import 'package:codebase/views/contact.dart';
 import 'package:codebase/views/footer.dart';
 import 'package:codebase/views/home.dart';
 import 'package:codebase/views/services.dart';
-import 'package:codebase/widgets/navbar/navBar.dart';
+import 'package:codebase/widgets/navbar/navbar_mobile.dart';
+import 'package:codebase/widgets/navbar/navbar_tablet_desktop.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -43,40 +44,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          // NavBar(),
-          SliverAppBar(
-            leadingWidth: 70,
-            toolbarHeight: 70,
-            pinned: true,
-            floating: true,
-            snap: true,
-            backgroundColor: Colors.amber[800],
-            leading: Image(
-              image: AssetImage('../assets/logo/logoPVRF.png'),
-            ),
-            actions: <Widget>[
-              Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.only(left: 0, right: 50),
-                child: Text('HOME'),
-              ),
-              Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.only(left: 0, right: 50),
-                child: Text('SERVIÇOS'),
-              ),
-              Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.only(left: 0, right: 50),
-                child: Text('SOBRE'),
-              ),
-              Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.only(left: 0, right: 50),
-                child: Text('CONTATO'),
-              ),
-            ],
-          ),
+          MediaQuery.of(context).size.width >= 615
+              ? NavBarTabletDesktop()
+              : NavBarMobile(),
           SliverList(
               delegate: SliverChildListDelegate([
             Home(),
