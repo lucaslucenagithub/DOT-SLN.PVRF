@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CardTabletDesktop extends StatefulWidget {
-  CardTabletDesktop(
-      {Key key, this.backgroundImage, this.titleText, this.subTitleText})
+class CardTablet extends StatefulWidget {
+  CardTablet({Key key, this.backgroundImage, this.titleText, this.subTitleText})
       : super(key: key);
 
   final AssetImage backgroundImage;
@@ -11,15 +10,14 @@ class CardTabletDesktop extends StatefulWidget {
   final String subTitleText;
 
   @override
-  _CardTabletDesktopState createState() => _CardTabletDesktopState(
+  _CardTabletState createState() => _CardTabletState(
       backgroundImage: backgroundImage,
       titleText: titleText,
       subTitleText: subTitleText);
 }
 
-class _CardTabletDesktopState extends State<CardTabletDesktop> {
-  _CardTabletDesktopState(
-      {this.backgroundImage, this.titleText, this.subTitleText});
+class _CardTabletState extends State<CardTablet> {
+  _CardTabletState({this.backgroundImage, this.titleText, this.subTitleText});
 
   final AssetImage backgroundImage;
   final String titleText;
@@ -31,12 +29,12 @@ class _CardTabletDesktopState extends State<CardTabletDesktop> {
       decoration: BoxDecoration(
           color: Colors.grey[50],
           border: Border.all(width: 1.0, color: Colors.grey[200])),
-      width: 280,
-      height: 610,
-      margin: EdgeInsets.only(bottom: 50),
+      width: 230,
+      height: 510,
+      margin: EdgeInsets.only(bottom: 40),
       child: Column(children: [
         Container(
-          height: 350.0,
+          height: 260.0,
           decoration: BoxDecoration(
               image: DecorationImage(
             image: backgroundImage,
@@ -44,14 +42,14 @@ class _CardTabletDesktopState extends State<CardTabletDesktop> {
           )),
         ),
         Container(
-            padding: EdgeInsets.all(24),
+            padding: EdgeInsets.all(14),
             child: Column(children: [
               Container(
                   alignment: Alignment.topLeft,
                   child: Text(
                     titleText,
                     style: TextStyle(
-                        fontSize: 22,
+                        fontSize: 16,
                         fontWeight: FontWeight.normal,
                         color: Colors.lightBlue.shade900),
                     textAlign: TextAlign.start,
@@ -59,7 +57,10 @@ class _CardTabletDesktopState extends State<CardTabletDesktop> {
               SizedBox(
                 height: 8,
               ),
-              Text(subTitleText),
+              Text(
+                subTitleText,
+                style: TextStyle(fontSize: 12),
+              ),
             ]))
       ]),
     );
