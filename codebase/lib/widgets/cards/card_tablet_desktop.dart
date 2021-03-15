@@ -64,37 +64,41 @@ class _CardTabletDesktopState extends State<CardTabletDesktop> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.grey[50],
-      margin: EdgeInsets.only(bottom: 40),
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.grey[50],
+          border: Border.all(width: 1.0, color: Colors.grey[200])),
+      width: 280,
+      height: 610,
+      // color: Colors.grey[50],
+      margin: EdgeInsets.only(bottom: 50),
       child: Column(children: [
         Container(
-          padding: EdgeInsets.only(left: 150, right: 150),
-          height: 300.0,
+          height: 350.0,
           decoration: BoxDecoration(
               image: DecorationImage(
             image: backgroundImage,
             fit: BoxFit.cover,
           )),
         ),
-        SizedBox(
-            width: 300,
-            child: Container(
-                padding: EdgeInsets.all(24),
-                child: Column(children: [
-                  Text(
+        Container(
+            padding: EdgeInsets.all(24),
+            child: Column(children: [
+              Container(
+                  alignment: Alignment.topLeft,
+                  child: Text(
                     titleText,
                     style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 22,
                         fontWeight: FontWeight.normal,
                         color: Colors.lightBlue.shade900),
                     textAlign: TextAlign.start,
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Text(subTitleText),
-                ])))
+                  )),
+              SizedBox(
+                height: 8,
+              ),
+              Text(subTitleText),
+            ]))
       ]),
     );
   }
