@@ -7,9 +7,9 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double descriptionSize = MediaQuery.of(context).size.width <= 514
+    double descriptionSize = MediaQuery.of(context).size.width <= 600
         ? 36
-        : MediaQuery.of(context).size.width >= 515 &&
+        : MediaQuery.of(context).size.width >= 601 &&
                 MediaQuery.of(context).size.width <= 828
             ? 47
             : 67;

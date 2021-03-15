@@ -6,6 +6,13 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double titleSize = MediaQuery.of(context).size.width <= 600
+        ? 32
+        : MediaQuery.of(context).size.width >= 601 &&
+                MediaQuery.of(context).size.width <= 1048
+            ? 42
+            : 48;
+
     return Container(
       height: 800.0,
       color: Colors.grey[50],
@@ -22,7 +29,8 @@ class About extends StatelessWidget {
                         child: Text(
                       'Sobre',
                       style: TextStyle(
-                          fontSize: 48, color: Colors.lightBlue.shade900),
+                          fontSize: titleSize,
+                          color: Colors.lightBlue.shade900),
                     )),
                     Container(
                       margin: EdgeInsets.only(top: 5),

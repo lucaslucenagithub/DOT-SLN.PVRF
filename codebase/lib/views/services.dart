@@ -12,6 +12,13 @@ class Services extends StatelessWidget {
         ? Axis.vertical
         : Axis.horizontal;
 
+    double titleSize = MediaQuery.of(context).size.width <= 600
+        ? 32
+        : MediaQuery.of(context).size.width >= 601 &&
+                MediaQuery.of(context).size.width <= 1048
+            ? 42
+            : 48;
+
     return Flex(direction: Axis.horizontal, children: [
       Expanded(
         child: Container(
@@ -27,7 +34,8 @@ class Services extends StatelessWidget {
                         child: Text(
                           'Serviços',
                           style: TextStyle(
-                              fontSize: 48, color: Colors.lightBlue.shade900),
+                              fontSize: titleSize,
+                              color: Colors.lightBlue.shade900),
                         ),
                       ),
                       Container(
