@@ -6,8 +6,20 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget backToTop = MediaQuery.of(context).size.width <= 656
+        ? Icon(
+            Icons.arrow_upward,
+            color: Colors.black,
+          )
+        : Text(
+            'Voltar ao topo',
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.w300),
+          );
+
+    double padding = MediaQuery.of(context).size.width <= 355 ? 20 : 50;
+
     return Container(
-      padding: EdgeInsets.all(50),
+      padding: EdgeInsets.all(padding),
       height: 150.0,
       color: Colors.grey[50],
       alignment: Alignment.center,
@@ -35,14 +47,13 @@ class Footer extends StatelessWidget {
                     ],
                   ),
                 )),
+            SizedBox(
+              width: 15,
+            ),
             Expanded(
                 flex: 1,
                 child: ElevatedButton(
-                  child: Text(
-                    'Voltar ao topo',
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.w300),
-                  ),
+                  child: backToTop,
                   onPressed: () {},
                   style: ButtonStyle(
                       minimumSize: MaterialStateProperty.all<Size>(Size(0, 80)),

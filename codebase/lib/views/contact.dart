@@ -8,12 +8,22 @@ class Contact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double titleSize = MediaQuery.of(context).size.width <= 600
+    double sectionTitleSize = MediaQuery.of(context).size.width <= 600
         ? 36
         : MediaQuery.of(context).size.width >= 601 &&
                 MediaQuery.of(context).size.width <= 1048
             ? 42
             : 48;
+
+    double budgetTitleSize = MediaQuery.of(context).size.width <= 600 &&
+            MediaQuery.of(context).size.width >= 414
+        ? 23
+        : MediaQuery.of(context).size.width <= 414
+            ? 18
+            : 32;
+
+    double titlesSize = MediaQuery.of(context).size.width <= 600 ? 19 : 26;
+    double subTitlesSize = MediaQuery.of(context).size.width <= 600 ? 11 : 14;
 
     return Container(
       height: 1000.0,
@@ -29,7 +39,7 @@ class Contact extends StatelessWidget {
                         child: Text(
                       'Contato',
                       style: TextStyle(
-                          fontSize: titleSize,
+                          fontSize: sectionTitleSize,
                           color: Colors.lightBlue.shade900),
                     )),
                     Container(
@@ -43,60 +53,65 @@ class Contact extends StatelessWidget {
             Expanded(
               child: EmbededMap(),
             ),
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      Container(
-                          padding: EdgeInsets.only(
-                              top: 50, bottom: 50, right: 100, left: 150),
-                          child: Column(children: [
+            Container(
+                padding: EdgeInsets.all(50),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Container(
+                              margin: EdgeInsets.only(bottom: 10),
+                              child: Text(
+                                'Inquéritos',
+                                style: TextStyle(
+                                    fontSize: titlesSize,
+                                    color: Colors.lightBlue.shade900),
+                              )),
+                          Container(
+                            child: Text(
+                              'Para qualquer consulta, dúvida ou recomendação, ligue: 123-456-7890',
+                              style: TextStyle(fontSize: subTitlesSize),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Container(
+                              child: Column(children: [
                             Container(
-                                alignment: Alignment.topLeft,
-                                margin: EdgeInsets.only(bottom: 20),
-                                child: Text(
-                                  'Inquéritos',
-                                  style: TextStyle(
-                                      fontSize: 26,
-                                      color: Colors.lightBlue.shade900),
-                                )),
+                              margin: EdgeInsets.only(bottom: 10),
+                              child: Text(
+                                'Escritório Central',
+                                style: TextStyle(
+                                    fontSize: titlesSize,
+                                    color: Colors.lightBlue.shade900),
+                              ),
+                            ),
                             Container(
                               child: Text(
-                                  'Para qualquer consulta, dúvida ou recomendação, ligue: 123-456-7890'),
+                                'Vila Maria Alta - 999999-99',
+                                style: TextStyle(fontSize: subTitlesSize),
+                              ),
                             )
                           ]))
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Container(
-                          child: Column(children: [
-                        Container(
-                          margin: EdgeInsets.only(bottom: 20),
-                          alignment: Alignment.center,
-                          child: Text(
-                            'Escritório Central',
-                            style: TextStyle(
-                                fontSize: 26, color: Colors.lightBlue.shade900),
-                          ),
-                        ),
-                        Container(
-                          child: Text('Vila Maria Alta - 999999-99'),
-                        )
-                      ]))
-                    ],
-                  ),
-                )
-              ],
-            ),
+                        ],
+                      ),
+                    )
+                  ],
+                )),
             Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(top: 50),
               child: Text(
                 'Solicite um orçamento: 123-456-7890',
-                style:
-                    TextStyle(fontSize: 32, color: Colors.lightBlue.shade900),
+                style: TextStyle(
+                    fontSize: budgetTitleSize,
+                    color: Colors.lightBlue.shade900),
               ),
             ),
             Row(

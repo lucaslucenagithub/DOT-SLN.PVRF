@@ -7,7 +7,7 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double titleSize = MediaQuery.of(context).size.width <= 600
-        ? 36
+        ? 32
         : MediaQuery.of(context).size.width >= 601 &&
                 MediaQuery.of(context).size.width <= 1048
             ? 42
