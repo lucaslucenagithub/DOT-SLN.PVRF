@@ -12,8 +12,10 @@ class _NavBarTabletDesktopState extends State<NavBarTabletDesktop> {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      leadingWidth: 70,
-      toolbarHeight: 70,
+      floating: true,
+      pinned: true,
+      leadingWidth: 100,
+      toolbarHeight: 100,
       backgroundColor: Colors.amber[800],
       leading: Image(
         image: AssetImage('../../../assets/logo/logoPVRF.png'),

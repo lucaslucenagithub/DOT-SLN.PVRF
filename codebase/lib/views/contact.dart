@@ -34,7 +34,7 @@ class Contact extends StatelessWidget {
         child: Column(
           children: [
             Container(
-                margin: EdgeInsets.only(top: 40),
+                margin: EdgeInsets.only(top: 40, bottom: 40),
                 child: Column(
                   children: [
                     Container(

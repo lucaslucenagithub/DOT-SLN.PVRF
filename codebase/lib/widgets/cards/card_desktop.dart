@@ -11,19 +11,10 @@ class CardDesktop extends StatefulWidget {
   final String subTitleText;
 
   @override
-  _CardDesktopState createState() => _CardDesktopState(
-      backgroundImage: backgroundImage,
-      titleText: titleText,
-      subTitleText: subTitleText);
+  _CardDesktopState createState() => _CardDesktopState();
 }
 
 class _CardDesktopState extends State<CardDesktop> {
-  _CardDesktopState({this.backgroundImage, this.titleText, this.subTitleText});
-
-  final AssetImage backgroundImage;
-  final String titleText;
-  final String subTitleText;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +29,7 @@ class _CardDesktopState extends State<CardDesktop> {
           height: 350.0,
           decoration: BoxDecoration(
               image: DecorationImage(
-            image: backgroundImage,
+            image: widget.backgroundImage,
             fit: BoxFit.cover,
           )),
         ),
@@ -48,7 +39,7 @@ class _CardDesktopState extends State<CardDesktop> {
               Container(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    titleText,
+                    widget.titleText,
                     style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.normal,
@@ -58,7 +49,7 @@ class _CardDesktopState extends State<CardDesktop> {
               SizedBox(
                 height: 8,
               ),
-              Text(subTitleText),
+              Text(widget.subTitleText),
             ]))
       ]),
     );

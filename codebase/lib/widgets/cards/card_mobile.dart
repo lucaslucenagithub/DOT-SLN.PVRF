@@ -10,19 +10,10 @@ class CardMobile extends StatefulWidget {
   final String subTitleText;
 
   @override
-  _CardMobileState createState() => _CardMobileState(
-      backgroundImage: backgroundImage,
-      titleText: titleText,
-      subTitleText: subTitleText);
+  _CardMobileState createState() => _CardMobileState();
 }
 
 class _CardMobileState extends State<CardMobile> {
-  _CardMobileState({this.backgroundImage, this.titleText, this.subTitleText});
-
-  final AssetImage backgroundImage;
-  final String titleText;
-  final String subTitleText;
-
   @override
   Widget build(BuildContext context) {
     double titleSize = MediaQuery.of(context).size.width >= 440 &&
@@ -54,7 +45,7 @@ class _CardMobileState extends State<CardMobile> {
           height: 260.0,
           decoration: BoxDecoration(
               image: DecorationImage(
-            image: backgroundImage,
+            image: widget.backgroundImage,
             fit: BoxFit.cover,
           )),
         ),
@@ -64,7 +55,7 @@ class _CardMobileState extends State<CardMobile> {
               Container(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    titleText,
+                    widget.titleText,
                     style: TextStyle(
                         fontSize: titleSize,
                         fontWeight: FontWeight.normal,
@@ -75,7 +66,7 @@ class _CardMobileState extends State<CardMobile> {
                 height: 18,
               ),
               Text(
-                subTitleText,
+                widget.subTitleText,
                 style: TextStyle(fontSize: subTitleSize),
               ),
             ]))

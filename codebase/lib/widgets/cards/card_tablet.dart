@@ -10,19 +10,10 @@ class CardTablet extends StatefulWidget {
   final String subTitleText;
 
   @override
-  _CardTabletState createState() => _CardTabletState(
-      backgroundImage: backgroundImage,
-      titleText: titleText,
-      subTitleText: subTitleText);
+  _CardTabletState createState() => _CardTabletState();
 }
 
 class _CardTabletState extends State<CardTablet> {
-  _CardTabletState({this.backgroundImage, this.titleText, this.subTitleText});
-
-  final AssetImage backgroundImage;
-  final String titleText;
-  final String subTitleText;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +29,7 @@ class _CardTabletState extends State<CardTablet> {
           height: 260.0,
           decoration: BoxDecoration(
               image: DecorationImage(
-            image: backgroundImage,
+            image: widget.backgroundImage,
             fit: BoxFit.cover,
           )),
         ),
@@ -48,7 +39,7 @@ class _CardTabletState extends State<CardTablet> {
               Container(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    titleText,
+                    widget.titleText,
                     style: TextStyle(
                         fontSize: 19,
                         fontWeight: FontWeight.normal,
@@ -59,7 +50,7 @@ class _CardTabletState extends State<CardTablet> {
                 height: 8,
               ),
               Text(
-                subTitleText,
+                widget.subTitleText,
                 style: TextStyle(fontSize: 13),
               ),
             ]))
