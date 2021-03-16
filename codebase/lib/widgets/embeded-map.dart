@@ -19,7 +19,7 @@ class EmbededMap extends StatelessWidget {
           ..style.border = 'none');
 
     return Container(
-        padding: EdgeInsets.only(top: 50, left: 150, right: 150, bottom: 20),
+        // padding: EdgeInsets.only(top: 50, left: 150, right: 150, bottom: 20),
         margin: EdgeInsets.only(top: 20),
         child: HtmlElementView(viewType: 'test-view-type'));
   }

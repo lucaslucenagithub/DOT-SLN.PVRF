@@ -19,11 +19,13 @@ class Contact extends StatelessWidget {
             MediaQuery.of(context).size.width >= 414
         ? 23
         : MediaQuery.of(context).size.width <= 414
-            ? 18
+            ? 17
             : 32;
 
-    double titlesSize = MediaQuery.of(context).size.width <= 600 ? 19 : 26;
+    double titlesSize = MediaQuery.of(context).size.width <= 600 ? 18 : 26;
     double subTitlesSize = MediaQuery.of(context).size.width <= 600 ? 11 : 14;
+
+    double detailsPadding = MediaQuery.of(context).size.width <= 477 ? 10 : 50;
 
     return Container(
       height: 1000.0,
@@ -54,7 +56,7 @@ class Contact extends StatelessWidget {
               child: EmbededMap(),
             ),
             Container(
-                padding: EdgeInsets.all(50),
+                padding: EdgeInsets.all(detailsPadding),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
