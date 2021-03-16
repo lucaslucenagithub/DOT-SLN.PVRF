@@ -5,6 +5,7 @@ import 'package:codebase/views/home.dart';
 import 'package:codebase/views/services.dart';
 import 'package:codebase/widgets/navbar/navbar_mobile.dart';
 import 'package:codebase/widgets/navbar/navbar_tablet_desktop.dart';
+import 'package:codebase/widgets/navingation-drawer/navigation_drawer.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -42,6 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer:
+          MediaQuery.of(context).size.width <= 852 ? NavigationDrawer() : null,
       body: CustomScrollView(
         slivers: [
           MediaQuery.of(context).size.width >= 615

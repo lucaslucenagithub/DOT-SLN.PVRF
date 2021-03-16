@@ -15,7 +15,7 @@ class Services extends StatelessWidget {
     double paddingLeftRight = MediaQuery.of(context).size.width <= 682 ? 50 : 0;
 
     double titleSize = MediaQuery.of(context).size.width <= 600
-        ? 32
+        ? 36
         : MediaQuery.of(context).size.width >= 601 &&
                 MediaQuery.of(context).size.width <= 1048
             ? 42

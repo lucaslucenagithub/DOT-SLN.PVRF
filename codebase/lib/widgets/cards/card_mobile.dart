@@ -25,10 +25,27 @@ class _CardMobileState extends State<CardMobile> {
 
   @override
   Widget build(BuildContext context) {
+    double titleSize = MediaQuery.of(context).size.width >= 440 &&
+            MediaQuery.of(context).size.width <= 852
+        ? 22
+        : MediaQuery.of(context).size.width >= 360 &&
+                MediaQuery.of(context).size.width <= 439
+            ? 18
+            : 16;
+
+    double subTitleSize = MediaQuery.of(context).size.width >= 440 &&
+            MediaQuery.of(context).size.width <= 852
+        ? 15
+        : MediaQuery.of(context).size.width >= 360 &&
+                MediaQuery.of(context).size.width <= 439
+            ? 14
+            : 12;
+
     return Container(
       decoration: BoxDecoration(
           color: Colors.grey[50],
-          border: Border.all(width: 1.0, color: Colors.grey[200])),
+          border: Border.all(width: 1.0, color: Colors.grey[200]),
+          borderRadius: BorderRadius.all(Radius.circular(5))),
       width: 400,
       height: 510,
       margin: EdgeInsets.only(bottom: 40),
@@ -49,7 +66,7 @@ class _CardMobileState extends State<CardMobile> {
                   child: Text(
                     titleText,
                     style: TextStyle(
-                        fontSize: 16,
+                        fontSize: titleSize,
                         fontWeight: FontWeight.normal,
                         color: Colors.lightBlue.shade900),
                     textAlign: TextAlign.start,
@@ -59,7 +76,7 @@ class _CardMobileState extends State<CardMobile> {
               ),
               Text(
                 subTitleText,
-                style: TextStyle(fontSize: 12),
+                style: TextStyle(fontSize: subTitleSize),
               ),
             ]))
       ]),

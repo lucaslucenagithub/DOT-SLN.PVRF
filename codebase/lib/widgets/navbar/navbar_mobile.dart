@@ -12,8 +12,8 @@ class _NavBarMobileState extends State<NavBarMobile> {
   Widget build(BuildContext context) {
     return SliverAppBar(
       leadingWidth: 70,
-      toolbarHeight: 70,
       backgroundColor: Colors.amber[800],
+      toolbarHeight: 70,
       leading: Image(
         image: AssetImage('../../../assets/logo/logoPVRF.png'),
       ),
@@ -22,9 +22,8 @@ class _NavBarMobileState extends State<NavBarMobile> {
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
             child: IconButton(
-              icon: Icon(Icons.menu),
-              onPressed: () {},
-            )),
+                icon: Icon(Icons.menu),
+                onPressed: () => Scaffold.of(context).openEndDrawer())),
       ],
     );
   }

@@ -9,7 +9,7 @@ class Contact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double titleSize = MediaQuery.of(context).size.width <= 600
-        ? 32
+        ? 36
         : MediaQuery.of(context).size.width >= 601 &&
                 MediaQuery.of(context).size.width <= 1048
             ? 42

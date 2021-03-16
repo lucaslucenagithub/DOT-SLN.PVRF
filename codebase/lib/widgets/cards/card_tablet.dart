@@ -28,7 +28,8 @@ class _CardTabletState extends State<CardTablet> {
     return Container(
       decoration: BoxDecoration(
           color: Colors.grey[50],
-          border: Border.all(width: 1.0, color: Colors.grey[200])),
+          border: Border.all(width: 1.0, color: Colors.grey[200]),
+          borderRadius: BorderRadius.all(Radius.circular(5))),
       width: 230,
       height: 510,
       margin: EdgeInsets.only(bottom: 40),
@@ -49,7 +50,7 @@ class _CardTabletState extends State<CardTablet> {
                   child: Text(
                     titleText,
                     style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 19,
                         fontWeight: FontWeight.normal,
                         color: Colors.lightBlue.shade900),
                     textAlign: TextAlign.start,
@@ -59,7 +60,7 @@ class _CardTabletState extends State<CardTablet> {
               ),
               Text(
                 subTitleText,
-                style: TextStyle(fontSize: 12),
+                style: TextStyle(fontSize: 13),
               ),
             ]))
       ]),

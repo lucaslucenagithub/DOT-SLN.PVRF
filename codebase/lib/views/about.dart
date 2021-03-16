@@ -7,7 +7,7 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double titleSize = MediaQuery.of(context).size.width <= 600
-        ? 32
+        ? 36
         : MediaQuery.of(context).size.width >= 601 &&
                 MediaQuery.of(context).size.width <= 1048
             ? 42
@@ -43,7 +43,7 @@ class About extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(50),
               child: Text(
-                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. dummy text of the printing and typesetting industry. Lore. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.'),
+                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. dummy text of the printing and typesetting industry. Lore. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. dummy text of the printing and typesetting industry. Lore. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. dummy text of the printing and typesetting industry. Lore. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.'),
             )
           ])),
           Expanded(
