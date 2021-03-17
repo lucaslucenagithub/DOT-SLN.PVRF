@@ -55,6 +55,11 @@ flutter:
 
   assets:
     - assets/
+    - assets/home-bg/
+    - assets/logo/
+    - assets/scaffolding/
+    - assets/services/
+    - assets/social-media-icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

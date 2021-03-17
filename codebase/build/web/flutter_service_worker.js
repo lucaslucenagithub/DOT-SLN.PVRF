@@ -3,7 +3,14 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "801125fca546f506babac9af4ec061ba",
+  "assets/AssetManifest.json": "3d1f290dd0658380a16afb08dd1376c8",
+"assets/assets/home-bg/beautiful-view-construction-site-city-during-sunset.png": "497c0683a33414769463a8c94cea43b0",
+"assets/assets/logo/logoPVRF.png": "b0903580631adf1c5d3bb9e61588bfb8",
+"assets/assets/scaffolding/crane-construction-building.png": "533efc329122a275ba16dd120667cf7c",
+"assets/assets/social-media-icons/174857.png": "5d66b2f4a5195c9b9c76782edaf945b0",
+"assets/assets/social-media-icons/281786.png": "1091476edf2b5f3a33911da23b0e1340",
+"assets/assets/social-media-icons/580b57fcd9996e24bc43c543.png": "6355dda76734b248a5d3062cd3822f1f",
+"assets/assets/social-media-icons/Instagram-Icon.png": "a17f5888defa179c9458258e6b826e58",
 "assets/FontManifest.json": "5a32d4310a6f5d9a6b651e75ba0d7372",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
 "assets/NOTICES": "d220238bb256afee6403e8dbcf1a1192",
@@ -14,8 +21,8 @@ const RESOURCES = {
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "fa32fa67c25075154f570786b55f44e0",
-"/": "fa32fa67c25075154f570786b55f44e0",
+"index.html": "d531b8e7b0aed578b2ec61cbb2850e19",
+"/": "d531b8e7b0aed578b2ec61cbb2850e19",
 "main.dart.js": "9467f1238a25174a86c150c08a39308e",
 "manifest.json": "82faa17a2a1a27b0a33c553818f7a8dc",
 "version.json": "2c6fc633f0d1540cfafe0c766e12662a"
