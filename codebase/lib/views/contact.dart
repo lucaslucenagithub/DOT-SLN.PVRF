@@ -2,6 +2,7 @@ import 'package:codebase/widgets/embeded-map.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Contact extends StatelessWidget {
   const Contact({Key key}) : super(key: key);
@@ -121,29 +122,31 @@ class Contact extends StatelessWidget {
               children: [
                 Container(
                   margin: EdgeInsets.only(bottom: 50, top: 50),
-                  child: Row(children: [
-                    Container(
-                        margin: EdgeInsets.only(right: 25),
-                        child: Icon(
-                          FontAwesomeIcons.linkedin,
-                          size: 28.0,
-                          color: Colors.blue,
-                        )),
-                    Container(
-                        margin: EdgeInsets.only(right: 25),
-                        child: Icon(
-                          FontAwesomeIcons.envelope,
-                          size: 28.0,
-                          color: Colors.red,
-                        )),
-                    Container(
-                        margin: EdgeInsets.only(right: 25),
-                        child: Icon(
-                          FontAwesomeIcons.instagram,
-                          size: 28.0,
-                          color: Colors.black,
-                        ))
-                  ]),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              FontAwesomeIcons.linkedinIn,
+                              size: 28.0,
+                              color: Colors.blue,
+                            )),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              FontAwesomeIcons.solidEnvelope,
+                              size: 28.0,
+                              color: Colors.red,
+                            )),
+                        IconButton(
+                            onPressed: () async => await launch(
+                                'https://www.instagram.com/pvrf.obras/?hl=pt'),
+                            icon: Icon(
+                              FontAwesomeIcons.instagram,
+                              size: 28.0,
+                            ))
+                      ]),
                 )
               ],
             )

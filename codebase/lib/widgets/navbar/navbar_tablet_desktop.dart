@@ -2,7 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NavBarTabletDesktop extends StatefulWidget {
-  NavBarTabletDesktop({Key key}) : super(key: key);
+  NavBarTabletDesktop({Key key, @required this.scrollToIndex})
+      : super(key: key);
+
+  final Function scrollToIndex;
 
   @override
   _NavBarTabletDesktopState createState() => _NavBarTabletDesktopState();
@@ -21,26 +24,33 @@ class _NavBarTabletDesktopState extends State<NavBarTabletDesktop> {
         image: AssetImage('../../../assets/logo/logoPVRF.png'),
       ),
       actions: <Widget>[
-        Container(
-          alignment: Alignment.center,
-          margin: EdgeInsets.only(left: 0, right: 50),
-          child: Text('HOME'),
-        ),
-        Container(
-          alignment: Alignment.center,
-          margin: EdgeInsets.only(left: 0, right: 50),
-          child: Text('SERVIÇOS'),
-        ),
-        Container(
-          alignment: Alignment.center,
-          margin: EdgeInsets.only(left: 0, right: 50),
-          child: Text('SOBRE'),
-        ),
-        Container(
-          alignment: Alignment.center,
-          margin: EdgeInsets.only(left: 0, right: 50),
-          child: Text('CONTATO'),
-        ),
+        SizedBox(
+          width: 600,
+          child: DefaultTabController(
+              length: 4,
+              child: TabBar(
+                indicatorSize: TabBarIndicatorSize.tab,
+                onTap: (index) async => widget.scrollToIndex(index),
+                tabs: [
+                  Container(
+                    alignment: Alignment.center,
+                    child: Text('HOME'),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    child: Text('SERVIÇOS'),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    child: Text('SOBRE'),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    child: Text('CONTATO'),
+                  )
+                ],
+              )),
+        )
       ],
     );
   }
