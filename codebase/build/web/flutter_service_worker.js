@@ -3,10 +3,13 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "3d1f290dd0658380a16afb08dd1376c8",
+  "assets/AssetManifest.json": "50b84c6c2561fb53e6633b546a412c51",
 "assets/assets/home-bg/beautiful-view-construction-site-city-during-sunset.png": "497c0683a33414769463a8c94cea43b0",
 "assets/assets/logo/logoPVRF.png": "b0903580631adf1c5d3bb9e61588bfb8",
 "assets/assets/scaffolding/crane-construction-building.png": "533efc329122a275ba16dd120667cf7c",
+"assets/assets/services/structural/Steel_construction.jpg": "ba6cd6f5e02a10b042ba8e39f11cdd73",
+"assets/assets/services/writting-papper/laudos-pericias.jpg": "8dc8e13698c21316402fc9e70c1071d9",
+"assets/assets/services/yellow-hat/construction-plan-calculator-hard-hat-project-isto.jpg": "9d1419a3df67f2adcded62d2f8f32cd4",
 "assets/assets/social-media-icons/174857.png": "5d66b2f4a5195c9b9c76782edaf945b0",
 "assets/assets/social-media-icons/281786.png": "1091476edf2b5f3a33911da23b0e1340",
 "assets/assets/social-media-icons/580b57fcd9996e24bc43c543.png": "6355dda76734b248a5d3062cd3822f1f",
@@ -21,8 +24,8 @@ const RESOURCES = {
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "d531b8e7b0aed578b2ec61cbb2850e19",
-"/": "d531b8e7b0aed578b2ec61cbb2850e19",
+"index.html": "04c163566d393dfcd353b95238bb2c54",
+"/": "04c163566d393dfcd353b95238bb2c54",
 "main.dart.js": "9467f1238a25174a86c150c08a39308e",
 "manifest.json": "82faa17a2a1a27b0a33c553818f7a8dc",
 "version.json": "2c6fc633f0d1540cfafe0c766e12662a"
